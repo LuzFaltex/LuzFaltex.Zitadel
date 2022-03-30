@@ -1,9 +1,34 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>netstandard2.1,net5.0,net6.0</TargetFrameworks>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>0.0.1</Version>
+		<Description>
+			$(BaseDescription)
+			
+			This package is a metapackage for LuzFaltex.Zitadel, providing references to everything you need to get
+			started. Note that this package implies a dependency on the latest version of LuzFaltex.Zitadel's main
+			packages, with no regard for API compatibility across builds.
+			
+			Production packages/projects should probably prefer explicit dependencies instead.
+		</Description>
+		<PackageReleaseNotes>
+			Initial release.
+		</PackageReleaseNotes>
+
+		<!-- No need for build out put since this is a metapackage. -->
+		<IncludeSymbols>false</IncludeSymbols>
+		<IncludeSource>false</IncludeSource>
+		<EmbedUntrackedSources>false</EmbedUntrackedSources>
+		<EmbedAllSources>false</EmbedAllSources>
+		<IncludeBuildOutput>false</IncludeBuildOutput>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\LuzFaltex.Zitadel.Hosting\LuzFaltex.Zitadel.Hosting.csproj" />
+	</ItemGroup>
 
 </Project>

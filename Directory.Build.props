@@ -1,9 +1,38 @@
 <Project>
+
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
+    <Deterministic>true</Deterministic>
+    <DebugSymbols>true</DebugSymbols>
+
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
 	
   <PropertyGroup>
+    <Title>$(AssemblyName)</Title>
     <Authors>LuzFaltex Contributors</Authors>
     <Company>LuzFaltex</Company>
     <Copyright>Copyright LuzFaltex © $([System.DateTime]::Now.Year.ToString()). All rights reserved.</Copyright>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+    <RequirePackageLicenseAcceptance>true</RequirePackageLicenseAcceptance>
+    
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <EmbedAllSources>true</EmbedAllSources>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <RepositoryUrl>https://github.com/LuzFaltex/LuzFaltex.Zitadel</RepositoryUrl>
+    <RepositoryBranch>main</RepositoryBranch>
+    <PackageOutputPath>$(MSBuildThisFileDirectory)nuget</PackageOutputPath>
+    <PackageProjectUrl>https://github.com/LuzFaltex/LuzFaltex.Zitadel</PackageProjectUrl>
+    <PackageTags>zitadel;bot;api</PackageTags>
+
+    <BaseDescription>
+      LuzFaltex.Zitadel is a .NET library for the Zitadel API built for performance, reliability, and concurrency.
+    </BaseDescription>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -17,8 +46,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-	<StyleCopRuleset>$(MSBuildThisFileDirectory)stylecop.ruleset</StyleCopRuleset>
-	<StyleCopConfiguration>$(MSBuildThisFileDirectory)stylecop.json</StyleCopConfiguration>
+    <StyleCopRuleset>$(MSBuildThisFileDirectory)stylecop.ruleset</StyleCopRuleset>
+	  <StyleCopConfiguration>$(MSBuildThisFileDirectory)stylecop.json</StyleCopConfiguration>
 	  
     <Nullable>enable</Nullable>
 	  
@@ -26,8 +55,7 @@
 
 	  <CodeAnalysisRuleSet>$(StyleCopRuleset)</CodeAnalysisRuleSet>
     <WarningsAsErrors>
-	  CS1591;
-      CS8600; 
+	    CS8600;
       CS8601;
       CS8602;
       CS8603;
@@ -58,10 +86,12 @@
       CS8643;
       CS8644;
       CS8645;
+      CS8762;
+      CS8765;
     </WarningsAsErrors>
     <NoWarn>
-		CS8632;
-		AD0001;
+      CS8632;
+      AD0001;
     </NoWarn>
   </PropertyGroup>
 
@@ -77,8 +107,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.376" PrivateAssets="all" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.406" PrivateAssets="all" />
+
+    <!-- Langauge Support Packages -->
+    <PackageReference Include="Nullable" Version="1.3.0" PrivateAssets="all" />
+    <PackageReference Include="IsExternalInit" Version="1.0.2" PrivateAssets="all" />
+
+    <!-- JetBrains Annotations -->
     <PackageReference Include="JetBrains.Annotations" Version="2021.3.0" />
+
+    <!-- SourceLink -->
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
   </ItemGroup>
 
 

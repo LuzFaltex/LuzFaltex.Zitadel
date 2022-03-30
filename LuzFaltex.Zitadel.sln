@@ -5,6 +5,16 @@ VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.Zitadel", "LuzFaltex.Zitadel\LuzFaltex.Zitadel.csproj", "{60B3341B-E080-46C0-806A-A6E98535777E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.Zitadel.Hosting", "LuzFaltex.Zitadel.Hosting\LuzFaltex.Zitadel.Hosting.csproj", "{0654E5C0-E79F-4C08-8973-DA6BFAD52B72}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{E97801A3-539A-456C-8371-C07F2BBD48C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.Zitadel.Rest", "Backend\LuzFaltex.Zitadel.Rest\LuzFaltex.Zitadel.Rest.csproj", "{E0225FF7-A7D6-41EF-BE59-778111F9849F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.Zitadel.API.Abstractions", "Backend\LuzFaltex.Zitadel.API.Abstractions\LuzFaltex.Zitadel.API.Abstractions.csproj", "{EC2DB2B6-B63E-4C52-A046-E697453188C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.Zitadel.API", "Backend\LuzFaltex.Zitadel.API\LuzFaltex.Zitadel.API.csproj", "{CBAF046F-1076-4BB3-915B-AE276B258DD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +25,30 @@ Global
 		{60B3341B-E080-46C0-806A-A6E98535777E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60B3341B-E080-46C0-806A-A6E98535777E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60B3341B-E080-46C0-806A-A6E98535777E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0654E5C0-E79F-4C08-8973-DA6BFAD52B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0654E5C0-E79F-4C08-8973-DA6BFAD52B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0654E5C0-E79F-4C08-8973-DA6BFAD52B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0654E5C0-E79F-4C08-8973-DA6BFAD52B72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0225FF7-A7D6-41EF-BE59-778111F9849F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0225FF7-A7D6-41EF-BE59-778111F9849F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0225FF7-A7D6-41EF-BE59-778111F9849F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0225FF7-A7D6-41EF-BE59-778111F9849F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC2DB2B6-B63E-4C52-A046-E697453188C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC2DB2B6-B63E-4C52-A046-E697453188C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC2DB2B6-B63E-4C52-A046-E697453188C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC2DB2B6-B63E-4C52-A046-E697453188C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBAF046F-1076-4BB3-915B-AE276B258DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBAF046F-1076-4BB3-915B-AE276B258DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBAF046F-1076-4BB3-915B-AE276B258DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBAF046F-1076-4BB3-915B-AE276B258DD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0225FF7-A7D6-41EF-BE59-778111F9849F} = {E97801A3-539A-456C-8371-C07F2BBD48C7}
+		{EC2DB2B6-B63E-4C52-A046-E697453188C5} = {E97801A3-539A-456C-8371-C07F2BBD48C7}
+		{CBAF046F-1076-4BB3-915B-AE276B258DD5} = {E97801A3-539A-456C-8371-C07F2BBD48C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8D73F25F-F5A4-478F-9CDD-3E929B897142}

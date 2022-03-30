@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>0.0.1</Version>
+		<Description>
+			$(BaseDescription)
+			
+			This package provides a simple implementation of a hosted service.
+		</Description>
+		<PackageReleaseNotes>
+			Initial release.
+		</PackageReleaseNotes>
+	</PropertyGroup>
+
+</Project>

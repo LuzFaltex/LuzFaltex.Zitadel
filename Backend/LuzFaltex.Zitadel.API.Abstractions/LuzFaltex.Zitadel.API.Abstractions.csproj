@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>0.0.1</Version>
+		<Description>
+			$(BaseDescription)
+			
+			This package contains a complete set of type and API abstractions for the Zitadel API. It provides no
+			concrete implementations; rather, it acts as a general, library-agnostic standard definition of Zitadel's
+			API.
+		</Description>
+		<PackageReleaseNotes>
+			Initial release.
+		</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="OneOf" Version="3.0.216" />
+	  <PackageReference Include="Remora.Rest.Core" Version="2.0.1" />
+	  <PackageReference Include="Remora.Results" Version="7.1.1" />
+	</ItemGroup>
+
+</Project>
