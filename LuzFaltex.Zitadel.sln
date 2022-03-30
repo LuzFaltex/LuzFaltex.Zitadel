@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32319.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuzFaltex.Zitadel", "LuzFaltex.Zitadel\LuzFaltex.Zitadel.csproj", "{60B3341B-E080-46C0-806A-A6E98535777E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60B3341B-E080-46C0-806A-A6E98535777E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60B3341B-E080-46C0-806A-A6E98535777E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60B3341B-E080-46C0-806A-A6E98535777E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60B3341B-E080-46C0-806A-A6E98535777E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D73F25F-F5A4-478F-9CDD-3E929B897142}
+	EndGlobalSection
+EndGlobal
