@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
@@ -22,6 +22,11 @@
 	  <PackageReference Include="OneOf" Version="3.0.216" />
 	  <PackageReference Include="Remora.Rest.Core" Version="2.0.1" />
 	  <PackageReference Include="Remora.Results" Version="7.1.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="API\Rest\" />
+	  <Folder Include="API\Objects\" />
 	</ItemGroup>
 
 </Project>
