@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  IDetailed.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,16 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
-
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Describes an object as having object details.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public interface IDetailed
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Gets information about this object.
         /// </summary>
-        string TokenId { get; init; }
-
-        /// <summary>
-        /// Gets the value of the auth token.
-        /// </summary>
-        string TokenValue { get; init; }
+        IObjectDetails Details { get; }
     }
 }

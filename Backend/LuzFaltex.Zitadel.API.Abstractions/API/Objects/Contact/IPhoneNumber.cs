@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  IPhoneNumber.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,24 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
-
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Represents a phone number assigned to an object.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public interface IPhoneNumber
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Gets the phone number assigned to the object.
         /// </summary>
-        string TokenId { get; init; }
+        /// <example>
+        /// +41 71 000 00 00.
+        /// </example>
+        string Phone { get; }
 
         /// <summary>
-        /// Gets the value of the auth token.
+        /// Gets a value indicating whether the user has verified the phone number.
         /// </summary>
-        string TokenValue { get; init; }
+        bool IsPhoneVerified { get; }
     }
 }

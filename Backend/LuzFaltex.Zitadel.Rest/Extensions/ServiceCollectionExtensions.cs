@@ -27,6 +27,7 @@ using System.Net.Http.Headers;
 using System.Reflection;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
+using LuzFaltex.Zitadel.Rest.API.Authentication.Credentials;
 using LuzFaltex.Zitadel.Rest.Polly;
 using Microsoft.Extensions.DependencyInjection;
 using Polly;
@@ -46,24 +47,25 @@ namespace LuzFaltex.Zitadel.Rest.Extensions
         /// Adds the services required for Zitadel's REST API.
         /// </summary>
         /// <param name="serviceCollection">The service cllection.</param>
-        /// <param name="tokenFactory">A function that creates or retrieves the authorization token.</param>
+        /// <param name="authenticationOptionsFactory">A function that creates or retrieves the authorization token.</param>
+        /// <param name="baseAddressFactory">A fucntion that creates or retrieves the base url. If not provided, defaults to <see cref="Constants.BaseUrl"/>.</param>
         /// <param name="buildClient">A function to allow additional modifications to the rest client.</param>
         /// <returns>The current <see cref="IServiceCollection"/>, for chaining.</returns>
         public static IServiceCollection AddZitadelRest
         (
             this IServiceCollection serviceCollection,
-            Func<IServiceProvider, string> tokenFactory,
+            Func<IServiceProvider, IAuthenticationOptions> authenticationOptionsFactory,
+            Func<IServiceProvider, Uri>? baseAddressFactory = null,
             Action<IHttpClientBuilder>? buildClient = null
         )
         {
             serviceCollection.ConfigureZitadelJsonConverters();
 
-            serviceCollection.AddSingleton<ITokenStore>(serviceProvider => new TokenStore(tokenFactory(serviceProvider)));
+            serviceCollection.AddSingleton(serviceProvider => authenticationOptionsFactory(serviceProvider));
 
             // Add API wrappers.
 
             // Add rest client
-
             var rateLimitPolicy = ZitadelRateLimitPolicy.Create();
             var retryDelay = Backoff.DecorrelatedJitterBackoffV2(TimeSpan.FromSeconds(1), 5);
 
@@ -77,19 +79,15 @@ namespace LuzFaltex.Zitadel.Rest.Extensions
 
                     var tokenStore = services.GetRequiredService<ITokenStore>();
 
-                    client.BaseAddress = Constants.BaseUrl;
+                    client.BaseAddress = baseAddressFactory?.Invoke(services) ?? Constants.BaseUrl;
                     client.DefaultRequestHeaders.UserAgent.Add(new ProductInfoHeaderValue(name, version.ToString()));
 
-                    var token = tokenStore.Token;
-                    if (string.IsNullOrWhiteSpace(token))
-                    {
-                        throw new InvalidOperationException("The authentication token cannot be null or white space.");
-                    }
+                    var authOptions = services.GetRequiredService<IAuthenticationOptions>();
 
                     client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue
                     (
-                        scheme: "Bot",
-                        parameter: token
+                        scheme: "serviceaccount",
+                        parameter: authOptions.ToAuthenticationToken(client.BaseAddress.AbsoluteUri)
                     );
                 })
                 .AddTransientHttpErrorPolicy

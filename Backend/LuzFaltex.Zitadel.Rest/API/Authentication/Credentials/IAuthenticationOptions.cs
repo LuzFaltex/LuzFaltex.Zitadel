@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  IAuthenticationOptions.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -21,23 +21,29 @@
 //
 
 using JetBrains.Annotations;
+using Remora.Rest.Core;
 
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.Rest.API.Authentication.Credentials
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Configuration options for authenticating with the Zitadel API.
     /// </summary>
     [PublicAPI]
-    public interface ITokenStore
+    public interface IAuthenticationOptions
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Gets the unique Id of this bot user.
         /// </summary>
-        string TokenId { get; init; }
+        Snowflake UserId { get; }
 
         /// <summary>
-        /// Gets the value of the auth token.
+        /// Gets the unique id of the JWT token.
         /// </summary>
-        string TokenValue { get; init; }
+        Snowflake KeyId { get; }
+
+        /// <summary>
+        /// Gets the value of the JWT token as an RSA private key.
+        /// </summary>
+        string Key { get; }
     }
 }

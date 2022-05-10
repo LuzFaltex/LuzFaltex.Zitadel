@@ -21,6 +21,7 @@
 //
 
 using JetBrains.Annotations;
+using Remora.Rest.Core;
 
 namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
@@ -31,40 +32,34 @@ namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
     public interface IUser
     {
         /// <summary>
-        /// Gets the Id of the user.
+        /// Gets the unique Id of the user.
         /// </summary>
-        public string Id { get; }
-
-        // TODO: Add user information model
+        Snowflake Id { get; }
 
         /// <summary>
-        /// Gets the display name of the user.
+        /// Gets information about this object.
         /// </summary>
-        public string DisplayName { get; }
+        IObjectDetails Details { get; }
 
         /// <summary>
-        /// Gets the preferred login name of the user.
+        /// Gets the current state of the user. Default value is <see cref="UserState.Unspecified"/>.
         /// </summary>
-        public string PreferredLoginName { get; }
+        UserState State { get; }
 
         /// <summary>
-        /// Gets the email of the user.
+        /// Gets the username of the user. This is not a unique value.
         /// </summary>
-        public string Email { get; }
+        string Username { get; }
 
         /// <summary>
-        /// Gets the user's first name.
+        /// Gets a list of the fully-qualified login names used by the user.
         /// </summary>
-        public string FirstName { get; }
+        /// <example>List [ "gigi@caos.ch", "gigi@caos-ag.zitadel.ch" ].</example>
+        string[] LoginNames { get; }
 
         /// <summary>
-        /// Gets the user's last name.
+        /// Gets the user's preferred (primary) login name.
         /// </summary>
-        public string LastName { get; }
-
-        /// <summary>
-        /// Gets the url to the user's avatar.
-        /// </summary>
-        public string AvatarUrl { get; }
+        string PreferredLoginName { get; }
     }
 }

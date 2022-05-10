@@ -38,24 +38,14 @@ namespace LuzFaltex.Zitadel.Rest
         public static Uri BaseUrl { get; } = new("https://api.zitadel.ch");
 
         /// <summary>
-        /// Gets the Admin API URL path.
+        /// Gets the base issuer API URL.
         /// </summary>
-        public static string AdminPath { get; } = $"/admin/v{(int)ZitadelAPIVersion.V1}";
+        public static Uri Issuer { get; } = new("https://issuer.zitadel.ch");
 
         /// <summary>
-        /// Gets the Assets API URL path.
+        /// Gets the Zitadel project id used for accessing the Zitadel REST API.
         /// </summary>
-        public static string AssetsPath { get; } = $"/assets/v{(int)ZitadelAPIVersion.V1}";
-
-        /// <summary>
-        /// Gets the Authentication API URL path.
-        /// </summary>
-        public static string AuthenticationPath { get; } = $"/auth/v{(int)ZitadelAPIVersion.V1}";
-
-        /// <summary>
-        /// Gets the Management API URL path.
-        /// </summary>
-        public static string ManagementPath { get; } = $"/management/v{(int)ZitadelAPIVersion.V1}";
+        public static ulong ZitadelApiProjectId { get; } = 69234237810729019;
 
         // The following strings are assumptions. Waiting on confirmation on their names.
 

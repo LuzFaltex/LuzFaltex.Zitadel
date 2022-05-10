@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  UserState.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,23 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Describes the current state of the user.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public enum UserState
     {
-        /// <summary>
-        /// Gets the id of the auth token.
-        /// </summary>
-        string TokenId { get; init; }
-
-        /// <summary>
-        /// Gets the value of the auth token.
-        /// </summary>
-        string TokenValue { get; init; }
+        Unspecified = 0,
+        Active = 1,
+        Inactive = 2,
+        Deleted = 3,
+        Locked = 4,
+        Suspend = 5,
+        Initial = 6
     }
 }

@@ -26,15 +26,20 @@ namespace LuzFaltex.Zitadel.Rest
     public class TokenStore : ITokenStore
     {
         /// <inheritdoc />
-        public string Token { get; }
+        public string TokenId { get; init; }
+
+        /// <inheritdoc />
+        public string TokenValue { get; init; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TokenStore"/> class.
         /// </summary>
-        /// <param name="token">The token to store.</param>
-        public TokenStore(string token)
+        /// <param name="tokenId">The unique id of the authentication token.</param>
+        /// <param name="tokenValue">The value of the authentication token.</param>
+        public TokenStore(string tokenId, string tokenValue)
         {
-            Token = token;
+            TokenId = tokenId;
+            TokenValue = tokenValue;
         }
     }
 }

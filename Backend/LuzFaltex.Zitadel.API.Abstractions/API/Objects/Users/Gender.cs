@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  Gender.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,31 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
-
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Describes the gender of a human user.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public enum Gender
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// No gender was specified.
         /// </summary>
-        string TokenId { get; init; }
+        Unspecified,
 
         /// <summary>
-        /// Gets the value of the auth token.
+        /// The user should be referred to using feminine pronouns.
         /// </summary>
-        string TokenValue { get; init; }
+        Female,
+
+        /// <summary>
+        /// The user should be referred to using male pronouns.
+        /// </summary>
+        Male,
+
+        /// <summary>
+        /// The user should be referred to using neuter pronouns.
+        /// </summary>
+        Diverse
     }
 }

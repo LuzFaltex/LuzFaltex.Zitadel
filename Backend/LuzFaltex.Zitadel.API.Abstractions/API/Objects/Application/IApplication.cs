@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  IApplication.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,33 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.Generic;
+using System.Text;
 using JetBrains.Annotations;
+using Remora.Rest.Core;
 
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects.Application
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Represents information about an OAuth2 application.
     /// </summary>
     [PublicAPI]
-    public interface ITokenStore
+    public interface IApplication
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Gets the application id.
         /// </summary>
-        string TokenId { get; init; }
+        Snowflake Id { get; }
 
         /// <summary>
-        /// Gets the value of the auth token.
+        /// Gets the name of the application.
         /// </summary>
-        string TokenValue { get; init; }
+        string Name { get; }
+
+        /// <summary>
+        /// Gets the description of the application.
+        /// </summary>
+        string Description { get; }
     }
 }

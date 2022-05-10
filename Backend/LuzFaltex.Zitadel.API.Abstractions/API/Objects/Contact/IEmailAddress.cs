@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  IEmailAddress.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,22 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
-
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Represents an email address assigned to an object.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public interface IEmailAddress
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Gets the email address assigned to the object.
+        /// Described by <see href="https://tools.ietf.org/html/rfc2822#section-3.4.1"/>.
         /// </summary>
-        string TokenId { get; init; }
+        string Email { get; }
 
         /// <summary>
-        /// Gets the value of the auth token.
+        /// Gets a value indicating whether the user has verified the email.
         /// </summary>
-        string TokenValue { get; init; }
+        bool IsEmailVerified { get; }
     }
 }

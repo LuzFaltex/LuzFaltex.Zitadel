@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  Constants.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,16 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
-
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Holds various constants.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public static class Constants
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Gets the Zitadel epoch used for timestamp offsetting.
         /// </summary>
-        string TokenId { get; init; }
-
-        /// <summary>
-        /// Gets the value of the auth token.
-        /// </summary>
-        string TokenValue { get; init; }
+        public static ulong ZitadelEpoch => 1556496000000;
     }
 }

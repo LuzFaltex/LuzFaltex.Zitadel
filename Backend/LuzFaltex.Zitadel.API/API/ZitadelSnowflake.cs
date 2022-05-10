@@ -1,5 +1,5 @@
 ﻿//
-//  ITokenStore.cs
+//  ZitadelSnowflake.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,24 +20,26 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
+using System.Diagnostics.CodeAnalysis;
+using Remora.Rest.Core;
 
-namespace LuzFaltex.Zitadel.Rest
+namespace LuzFaltex.Zitadel.API
 {
     /// <summary>
-    /// Represents a storage class for a single token.
+    /// Contains methods for initializing a <see cref="Snowflake"/> with the <see cref="Constants.ZitadelEpoch"/>.
     /// </summary>
-    [PublicAPI]
-    public interface ITokenStore
+    public static class ZitadelSnowflake
     {
         /// <summary>
-        /// Gets the id of the auth token.
+        /// Initializes a new instance of a <see cref="Snowflake"/> with the Zitadel epoch.
         /// </summary>
-        string TokenId { get; init; }
+        /// <param name="value">The snowflake value.</param>
+        /// <returns>A <see cref="Snowflake"/>.</returns>
+        public static Snowflake New(ulong value)
+            => new(value, Constants.ZitadelEpoch);
 
-        /// <summary>
-        /// Gets the value of the auth token.
-        /// </summary>
-        string TokenValue { get; init; }
+        /// <inheritdoc cref="Snowflake.TryParse(string, out Snowflake?, ulong)"/>
+        public static bool TryParse(string value, [NotNullWhen(true)] out Snowflake? result)
+            => Snowflake.TryParse(value, out result, Constants.ZitadelEpoch);
     }
 }

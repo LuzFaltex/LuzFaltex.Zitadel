@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+		<TargetFrameworks>netstandard2.1;net6.0</TargetFrameworks>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -26,6 +26,11 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\LuzFaltex.Zitadel.API.Abstractions\LuzFaltex.Zitadel.API.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Json\Converters\" />
+	  <Folder Include="Errors\" />
 	</ItemGroup>
 
 </Project>
