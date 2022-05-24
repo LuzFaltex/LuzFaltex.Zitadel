@@ -61,5 +61,15 @@ namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
         /// Gets the user's preferred (primary) login name.
         /// </summary>
         string PreferredLoginName { get; }
+
+        /// <summary>
+        /// Gets details about the user. If the user is a service account, this field will not be present.
+        /// </summary>
+        Optional<IHuman> Human { get; }
+
+        /// <summary>
+        /// Gets details about the user. If the user is a human, this field will not be present.
+        /// </summary>
+        Optional<IMachine> Machine { get; }
     }
 }

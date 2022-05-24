@@ -1,5 +1,5 @@
 ﻿//
-//  IHumanUser.cs
+//  IProfile.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,12 +20,15 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
+using JetBrains.Annotations;
+
 namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Represents a human user.
+    /// Information about a user for use in displaying their profile.
     /// </summary>
-    public interface IHumanUser : IUser
+    [PublicAPI]
+    public interface IProfile
     {
         /// <summary>
         /// Gets the user's first name.
@@ -48,7 +51,7 @@ namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
         string DisplayName { get; }
 
         /// <summary>
-        /// Gets the user's langauage tag. Defined by <see href="https://tools.ietf.org/html/rfc3066"/>.
+        /// Gets the user's language tag. Defined by <see href="https://tools.ietf.org/html/rfc3066"/>.
         /// </summary>
         string PreferredLanguage { get; }
 
@@ -61,15 +64,5 @@ namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
         /// Gets the url to the user's avatar.
         /// </summary>
         string AvatarUrl { get; }
-
-        /// <summary>
-        /// Gets the user's email address.
-        /// </summary>
-        IEmailAddress Email { get; }
-
-        /// <summary>
-        /// Gets the user's phone number.
-        /// </summary>
-        IPhoneNumber Phone { get; }
     }
 }

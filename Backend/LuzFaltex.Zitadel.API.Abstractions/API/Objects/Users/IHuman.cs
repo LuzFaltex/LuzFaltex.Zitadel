@@ -1,5 +1,5 @@
 ﻿//
-//  UserState.cs
+//  IHuman.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -20,52 +20,26 @@
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //
 
-using JetBrains.Annotations;
-
 namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Describes the current state of the user.
+    /// Represents a human user.
     /// </summary>
-    [PublicAPI]
-    public enum UserState
+    public interface IHuman
     {
         /// <summary>
-        /// No user state was specified.
+        /// Gets the user's profile information.
         /// </summary>
-        Unspecified = 0,
+        IProfile Profile { get; }
 
         /// <summary>
-        /// The user is active and enabled.
+        /// Gets the user's email address.
         /// </summary>
-        Active = 1,
+        IEmailAddress Email { get; }
 
         /// <summary>
-        /// The user has been disabled.
+        /// Gets the user's phone number.
         /// </summary>
-        Inactive = 2,
-
-        /// <summary>
-        /// The user has been deleted.
-        /// </summary>
-        Deleted = 3,
-
-        /// <summary>
-        /// The user is locked out.
-        /// </summary>
-        Locked = 4,
-
-        /// <summary>
-        /// The user account is suspended.
-        /// </summary>
-        /// <remarks>
-        /// This status is currently unused by the Zitadel API.
-        /// </remarks>
-        Suspend = 5,
-
-        /// <summary>
-        /// The user account has been created but is pending the first login of the user.
-        /// </summary>
-        Initial = 6
+        IPhoneNumber Phone { get; }
     }
 }

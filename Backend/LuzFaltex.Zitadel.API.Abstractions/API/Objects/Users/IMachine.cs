@@ -1,5 +1,5 @@
 ﻿//
-//  UserState.cs
+//  IMachine.cs
 //
 //  Author:
 //       LuzFaltex Contributors
@@ -25,47 +25,19 @@ using JetBrains.Annotations;
 namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
 {
     /// <summary>
-    /// Describes the current state of the user.
+    /// Holds details about a machine user.
     /// </summary>
     [PublicAPI]
-    public enum UserState
+    public interface IMachine
     {
         /// <summary>
-        /// No user state was specified.
+        /// Gets the name of the user.
         /// </summary>
-        Unspecified = 0,
+        string Name { get; }
 
         /// <summary>
-        /// The user is active and enabled.
+        /// Gets a description of the service this user represents.
         /// </summary>
-        Active = 1,
-
-        /// <summary>
-        /// The user has been disabled.
-        /// </summary>
-        Inactive = 2,
-
-        /// <summary>
-        /// The user has been deleted.
-        /// </summary>
-        Deleted = 3,
-
-        /// <summary>
-        /// The user is locked out.
-        /// </summary>
-        Locked = 4,
-
-        /// <summary>
-        /// The user account is suspended.
-        /// </summary>
-        /// <remarks>
-        /// This status is currently unused by the Zitadel API.
-        /// </remarks>
-        Suspend = 5,
-
-        /// <summary>
-        /// The user account has been created but is pending the first login of the user.
-        /// </summary>
-        Initial = 6
+        string Description { get; }
     }
 }

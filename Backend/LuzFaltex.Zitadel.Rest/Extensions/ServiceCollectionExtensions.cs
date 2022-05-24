@@ -59,7 +59,7 @@ namespace LuzFaltex.Zitadel.Rest.Extensions
             Action<IHttpClientBuilder>? buildClient = null
         )
         {
-            serviceCollection.ConfigureZitadelJsonConverters();
+            // serviceCollection.ConfigureZitadelJsonConverters();
 
             serviceCollection.AddSingleton(serviceProvider => authenticationOptionsFactory(serviceProvider));
 

@@ -32,12 +32,11 @@ namespace LuzFaltex.Zitadel.API.Abstractions.API.Objects
     {
         /// <summary>
         /// Gets the unique identifier of the latest change applied to this entity.
-        /// This field is incremental.
         /// </summary>
         /// <remarks>
         /// Can be compared against the sequence number from an update operation to ensure the object was updated.
         /// </remarks>
-        ulong Sequence { get; }
+        Snowflake Sequence { get; }
 
         /// <summary>
         /// Gets the date and time that the object was created.

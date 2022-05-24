@@ -21,12 +21,14 @@
 //
 
 using System;
+using JetBrains.Annotations;
 
-namespace LuzFaltex.Zitadel.API.Abstractions
+namespace LuzFaltex.Zitadel.API.Abstractions.API
 {
     /// <summary>
     /// Enumerates the various released versions of the Zitadel API.
     /// </summary>
+    [PublicAPI]
     public enum ZitadelAPIVersion
     {
         /// <summary>
