@@ -1,11 +1,11 @@
 blank_issues_enabled: true
-contact_links:
-  - name: Questions about Zitadel
-    url: https://zitadel.com/contact
-    about: Questions about Zitadel itself
+contact_links:  
   - name: Questions and Discussions
     url: https://github.com/LuzFaltex/LuzFaltex.Zitadel/discussions
     about: Please use discussions rather than issues for questions or comments unrelated to a specific bug or feature request.
   - name: Discord
     url: https://discord.gg/erh5Brh7jE
     about: Joint the official Zitadel Discord
+  - name: Questions about Zitadel IAM
+    url: https://zitadel.com/contact
+    about: Questions about Zitadel itself
